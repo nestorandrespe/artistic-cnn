@@ -1,6 +1,8 @@
 # artistic-cnn
 
-Adaptación del código publicado en [sub-subroutine](http://www.subsubroutine.com/sub-subroutine/2016/11/12/painting-like-van-gogh-with-convolutional-neural-networks) y [Garbled Notes](http://www.chioka.in/tensorflow-implementation-neural-algorithm-of-artistic-style).
+![ejemplo del resultado obtenido](img-ejemplo.jpg?raw=true "Ejemplo resultado")
+
+Adaptación del código publicado en [sub-subroutine](http://www.subsubroutine.com/sub-subroutine/2016/11/12/painting-like-van-gogh-with-convolutional-neural-networks) y [Garbled Notes](http://www.chioka.in/tensorflow-implementation-neural-algorithm-of-artistic-style). Modelo utilizado: [VGG19](http://www.vlfeat.org/matconvnet/pretrained/)
 
 Esta implementación expande el código para aplicarlo a una carpeta y exportar un video con el estilo deseado.
 
