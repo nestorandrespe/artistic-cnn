@@ -92,8 +92,8 @@ def to_rgb(im):
 
 # Preprocessing
 # create output directory
-if not os.path.exists(path_output):
-    os.mkdir(path_output)
+# if not os.path.exists(path_output):
+#     os.mkdir(path_output)
 
 # read in images
 img_content = imread(file_content_image)
