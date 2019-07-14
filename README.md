@@ -7,7 +7,7 @@ Esta implementación expande el código para aplicarlo a una carpeta y exportar 
 ## para ejecutar en una sola imagen
 
 ```bash
-python neura-style.py -i [archivo de entrada] -s [archivo para el estilo] -m [ruta al modelo] -o [carpeta de destino]
+python neural-style.py -i [archivo de entrada] -s [archivo para el estilo] -m [ruta al modelo] -o [carpeta de destino]
 ```
 
 TODO:
