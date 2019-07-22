@@ -19,5 +19,5 @@ TODO:
 ## para ejecutar en una carpeta con los frames del video
 
 ```bash
-python neural-style.py -i [carpeta de entrada] -s [archivo para el estilo] -m [ruta al modelo] -o [carpeta de destino]
+python neural-style-folder.py -i [carpeta de entrada] -s [archivo para el estilo] -m [ruta al modelo] -o [carpeta de destino]
 ```
