@@ -56,7 +56,7 @@ VGG19_mean = np.array([123.68, 116.779, 103.939]).reshape((1, 1, 1, 3))
 # NB. the total # of iterations run will be n_checkpoints * n_iterations_checkpoint
 n_checkpoints = 10            # number of checkpoints
 n_iterations_checkpoint = 10   # learning iterations per checkpoint
-path_output = 'output'  # directory to write checkpoint images into
+path_output = args['output']  # directory to write checkpoint images into
 
 
 # Helper functions

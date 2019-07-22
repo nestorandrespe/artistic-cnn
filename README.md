@@ -18,7 +18,6 @@ TODO:
 
 ## para ejecutar en una carpeta con los frames del video
 
-TODO:
-
-- [ ] adaptar el script de arriba para importar las imágenes de una carpeta
-- [ ] exportar las imágenes como video mp4
+```bash
+python neural-style.py -i [carpeta de entrada] -s [archivo para el estilo] -m [ruta al modelo] -o [carpeta de destino]
+```
