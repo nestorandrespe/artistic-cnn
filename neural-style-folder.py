@@ -127,7 +127,7 @@ for imagePath in paths.list_images(args["input"]):
     try:
         with tf.Session() as sess:
 
-            if(total < 200):
+            if(total < 15):
                 # read in images
                 img_content = imread(imagePath)
                 img_style = imread(file_style_image)
@@ -249,8 +249,7 @@ for imagePath in paths.list_images(args["input"]):
                     # write image
                     img_output = sess.run(net['input'])
                     img_output = imgunprocess(img_output)
-                    timestr = time.strftime("%Y%m%d_%H%M%S")
-                    output_file = path_output+'/'+timestr+'_' + \
+                    output_file = path_output+'/'+str(total).zfill(8)+'_' + \
                         '%s.jpg' % (i*n_iterations_checkpoint)
                     imsave(output_file, img_output)
                     total += 1

@@ -52,7 +52,7 @@ path_VGG19 = args['model']
 # VGG19 mean for standardisation (RGB)
 VGG19_mean = np.array([123.68, 116.779, 103.939]).reshape((1, 1, 1, 3))
 
-n_checkpoints = 50            # numero de checkpoints
+n_checkpoints = 10            # numero de checkpoints
 n_iterations_checkpoint = 10   # iteraciones por checkpoints
 path_output = args['output']  # carpeta donde se guardan los checkpoints
 
