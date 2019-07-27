@@ -30,6 +30,10 @@ ap.add_argument("-m", "--model", required=True,
 ap.add_argument("-o", "--output", required=True,
                 help="ruta de la carpeta de destino")
 
+ap.add_argument("-c", "--ciclo", required=True,
+                help="numero de repeticiones", default=100)
+
+
 # guarda los argumentos recibidos en una variable
 args = vars(ap.parse_args())
 
@@ -52,8 +56,8 @@ path_VGG19 = args['model']
 # VGG19 mean for standardisation (RGB)
 VGG19_mean = np.array([123.68, 116.779, 103.939]).reshape((1, 1, 1, 3))
 
-n_checkpoints = 10            # numero de checkpoints
-n_iterations_checkpoint = 10   # iteraciones por checkpoints
+n_checkpoints = 1            # numero de checkpoints
+n_iterations_checkpoint = args["ciclo"]   # iteraciones por checkpoints
 path_output = args['output']  # carpeta donde se guardan los checkpoints
 
 
@@ -231,18 +235,18 @@ with tf.Session() as sess:
     # instantiate optimiser
     optimizer = tf.contrib.opt.ScipyOptimizerInterface(
         L_total, method='L-BFGS-B',
-        options={'maxiter': n_iterations_checkpoint})
+        options={'maxiter': int(n_iterations_checkpoint)})
 
     init_op = tf.initialize_all_variables()
     sess.run(init_op)
     sess.run(net['input'].assign(img_initial))
-    for i in range(1, n_checkpoints+1):
+    for i in range(1, int(n_checkpoints)+1):
         # run optimisation
         optimizer.minimize(sess)
 
         # print costs
-        stderr.write('Iteration %d/%d\n' % (i*n_iterations_checkpoint,
-                                            n_checkpoints*n_iterations_checkpoint))
+        stderr.write('Iteration %d/%d\n' % (i*int(n_iterations_checkpoint),
+                                            int(n_checkpoints)*int(int(n_iterations_checkpoint))))
         stderr.write('  content loss: %g\n' % sess.run(content_loss))
         stderr.write('    style loss: %g\n' %
                      sess.run(weight_style * style_loss))
